@@ -1,20 +1,60 @@
 const baseUrl = "https://loveandscore.onrender.com"
 
-const makeRequest = async function () {
-    try {   
-        const response = await fetch(`${baseUrl}/Letter/Jessie+Paridhi`) // sunflower can be a drop box user picks an option from 
+const name1 = document.getElementById("First-Name") 
+const name2 = document.getElementById("Second-Name")
 
-        const json = await response.json();
+const submitButton=document.getElementById("submit");
+submitButton.addEventListener("click", submitButton);
 
-        console.log(json)
-    }
-
-    catch (error){
+const getScore = async function(name1,name2) {
+  try {
+    const response = await fetch (`${baseUrl}/Letter/:${name1}+${name2}`)
+    const json = await response.json();
+    console.log(json)
+    Object.keys(json).forEach(async (key,value) =>{
+      try{
+        const personh1 = document.getElementById("names");
+        personh1.innerHTML = json;
+        
+      }
+      catch(error){
         console.error(error)
-    }
+      }
+    })
+
+    //if matching score generated number greater than certain value 
+          //particular output goes from awkward to wholesome 
+
+    // const personh1 = document.getElementById("names");
+    // personh1.innerHTML = namesJSON;
+  }
+  catch(error) {
+    console.error(error)
+  }
 }
 
-makeRequest()
+function submitButton () {
+  var name1 = document.getElementById("First-Name").value;
+  var name2 = document.getElementById("Second-Name").value;
+  console.log(name1,name2)
+  getScore(name1,name2)
+
+}
+// const makeRequest = async function () {
+//     try {   
+//         const response = await fetch(`${baseUrl}/Letter/Jessie+Paridhi`) // sunflower can be a drop box user picks an option from 
+
+//         const json = await response.json();
+
+//         console.log(json)
+//     }
+
+//     catch (error){
+//         console.error(error)
+//     }
+// }
+
+// makeRequest()
 
 // const getObject = async function () {
 //     try {   
@@ -140,18 +180,10 @@ makeRequest()
 //     <p>Matching Score: ${matchingScore}</p>
 //     <p>Chance of Falling in Love Today: ${thePercentageOfFallInLove}%</p>
 
-//     <form action="">
-//     <h1>Compatibility</h1>
-//     <input type="text" class="form-control" placeholder="Enter First Name...">
-//     <input type="text" class="form-control" placeholder="Enter Second Name...">
-//     <button type="submit">Submit</button>
-// </form>
+//  
 //   </body>
 // </html>
 // `);
 // });
 
-// app.listen(port, () => {
-//   console.log(`Listening on port  ${port}`);
-// });
 

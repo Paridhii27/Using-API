@@ -1,9 +1,23 @@
+@font-face {
+  font-family: myFont;
+  src: url(assets/CuteLove-jEppv.ttf);
+}
+
 body {
-    font-family: Arial, sans-serif;
+
+    /* font-family: Arial, sans-serif; */
+    background-image: url(assets/background.png);
+    background-size: cover;
+    font-family: myFont;
     text-align: center;
     margin: 20px;
     background-color: #f0f0f0; 
     color: hsl(196, 80%, 80%);
+    color: hsl(240, 32%, 64%);
     box-shadow: 5px 5px 10px #888888;
-    text-shadow: 2px 2px 4px #ffc0cb;
+    text-shadow: 2px 2px 4px #e5e0f3;
+  }
+
+h1{
+    font-family: myFont;
   }

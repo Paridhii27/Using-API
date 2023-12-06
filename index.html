@@ -6,12 +6,28 @@
     <title>Love Calculator</title>
 </head>
 <body>
-    <form action="">
+
+    <div class = "input-form-container" >
+        <form action="">
             <h1>Compatibility</h1>
-            <input type="text" class="form-control" placeholder="Enter First Name...">
-            <input type="text" class="form-control" placeholder="Enter Second Name...">
-            <button type="submit">Submit</button>
-    </form>
+            <input type="text" class="form-control" id="First-Name" placeholder="Enter First Name...">
+            <input type="text" class="form-control" id="Second-Name" placeholder="Enter Second Name...">
+        </form>
+    </div>
+
+    <div class = "input-submit-container">
+        <button id="submit">Submit</button>
+    </div>
+
+    <div class = "matching-score-container">
+        <h2 id = "score-text"></h2>
+    </div>
+
+    <div class= "perecent-score-container">
+
+        <h2 id = "percent-text"></h2>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
