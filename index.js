@@ -1,26 +1,43 @@
-const baseUrl = "https://loveandscore.onrender.com"
+const baseUrl = "https://loveandscore.onrender.com/"
+console.log("what")
 
-const name1 = document.getElementById("First-Name") 
-const name2 = document.getElementById("Second-Name")
+let inputName = document.getElementById("input-names");
+// inputName.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   console.log("hi")
+//   getScore(name1,name2)
+// });
+inputName.addEventListener("click", submitForm);
 
-const submitButton=document.getElementById("submit");
-submitButton.addEventListener("click", submitButton);
+function submitForm () {
+  let name1 = document.getElementById("First-Name").value;
+  let name2 = document.getElementById("Second-Name").value;
+  // let matchingScoreValue="";
+  // let percentLove="";
+  console.log(name1,name2)
+  getScore(name1,name2)
+
+}
 
 const getScore = async function(name1,name2) {
   try {
-    const response = await fetch (`${baseUrl}/Letter/:${name1}+${name2}`)
-    const json = await response.json();
+    console.log("trying")
+    const response = await fetch (`${baseUrl}Letter/:${name1}+${name2}/`)
+    const json = await response.json(); 
     console.log(json)
-    Object.keys(json).forEach(async (key,value) =>{
-      try{
-        const personh1 = document.getElementById("names");
-        personh1.innerHTML = json;
+    // document.getElementById("score-text").innerHTML = matchingScoreValue
+    // document.getElementById("percent-text").innerHTML = percentLove
+    // console.log(json)
+    // Object.keys(json).forEach(async (key,value) =>{
+    //   try{
+    //     const personh1 = document.getElementById("names");
+    //     personh1.innerHTML = json;
         
-      }
-      catch(error){
-        console.error(error)
-      }
-    })
+    //   }
+    //   catch(error){
+    //     console.error(error)
+    //   }
+    // })
 
     //if matching score generated number greater than certain value 
           //particular output goes from awkward to wholesome 
@@ -33,44 +50,7 @@ const getScore = async function(name1,name2) {
   }
 }
 
-function submitButton () {
-  var name1 = document.getElementById("First-Name").value;
-  var name2 = document.getElementById("Second-Name").value;
-  console.log(name1,name2)
-  getScore(name1,name2)
-
-}
-// const makeRequest = async function () {
-//     try {   
-//         const response = await fetch(`${baseUrl}/Letter/Jessie+Paridhi`) // sunflower can be a drop box user picks an option from 
-
-//         const json = await response.json();
-
-//         console.log(json)
-//     }
-
-//     catch (error){
-//         console.error(error)
-//     }
-// }
-
-// makeRequest()
-
-// const getObject = async function () {
-//     try {   
-//         const response = await fetch(`${baseUrl}/objects/1`) // sunflower can be a drop box user picks an option from 
-
-//         const json = await response.json();
-
-//         console.log(json)
-//     }
-
-//     catch (error){
-//         console.error(error)
-//     }
-// }
-
-// getObject()
+getScore()
 
 // import express from "express";
 // import getRandom from "getrandomjs";
