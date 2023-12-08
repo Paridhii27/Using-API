@@ -20,12 +20,22 @@ const getScore = async function(name1,name2) {
 
     console.log(`Matching score is: ${json.matchingScore}`)
     const matchingScoreValue = json.matchingScore
-    if (matchingScoreValue>50){
-      document.getElementById("matching-score").innerHTML = "Matching score is " + matchingScoreValue + "its high"
-    }
-    const percentageValue = json.thePercentageOfFallInLove
     document.getElementById("matching-score").innerHTML = "Matching score is " + matchingScoreValue
-    document.getElementById("percent-score").innerHTML = "Compatibility is " +percentageValue +"%"
+
+    const percentageValue = json.thePercentageOfFallInLove
+
+    if (percentageValue>50 || percentageValue<=75){
+      document.getElementById("percent-score").innerHTML = "Compatibility is a " +percentageValue +"%"
+    }
+    else if (percentageValue>75 || percentageValue<=100){
+      document.getElementById("percent-score").innerHTML = "Compatibility is b " +percentageValue +"%"
+    }
+    else{
+      document.getElementById("percent-score").innerHTML = "Compatibility is c " +percentageValue +"%"
+    }
+
+    // document.getElementById("matching-score").innerHTML = "Matching score is " + matchingScoreValue
+    // document.getElementById("percent-score").innerHTML = "Compatibility is " +percentageValue +"%"
   }
   catch(error) {
     console.error(error)

@@ -3,6 +3,11 @@
   src: url(assets/CuteLove-jEppv.ttf);
 }
 
+@font-face {
+  font-family: number;
+  src: url(assets/numbers.ttf); 
+}
+
 h1 {
   font-family: myFont;
 }
@@ -12,7 +17,7 @@ body {
     /* font-family: Arial, sans-serif; */
     background-image: url(assets/background.png);
     background-size: cover;
-    font-family: myFont;
+    font-family: number;
     text-align: center;
     margin: 50px;
     color: hsl(196, 80%, 80%);
@@ -32,5 +37,7 @@ body {
     padding: 10px 10px;
     margin: 8px 0;
     box-sizing: border-box;
+    background-color: hsl(240, 41%, 95%);
+    box-shadow: 10px 10px;
   }
 
