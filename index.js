@@ -25,13 +25,16 @@ const getScore = async function(name1,name2) {
     const percentageValue = json.thePercentageOfFallInLove
 
     if (percentageValue>50 || percentageValue<=75){
-      document.getElementById("percent-score").innerHTML = "Compatibility is a " +percentageValue +"%"
+      document.getElementById("percent-score").innerHTML = "Compatibility is " +percentageValue +"%"
+      document.getElementById("compatibility-message").innerHTML = "No one gets you like they do"
     }
     else if (percentageValue>75 || percentageValue<=100){
       document.getElementById("percent-score").innerHTML = "Compatibility is b " +percentageValue +"%"
+      document.getElementById("compatibility-message").innerHTML = "You're falling in love"
     }
     else{
       document.getElementById("percent-score").innerHTML = "Compatibility is c " +percentageValue +"%"
+      document.getElementById("compatibility-message").innerHTML = "It's better to just stay friends."
     }
 
     // document.getElementById("matching-score").innerHTML = "Matching score is " + matchingScoreValue

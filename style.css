@@ -4,8 +4,8 @@
 }
 
 @font-face {
-  font-family: number;
-  src: url(assets/numbers.ttf); 
+  font-family: message;
+  src: url(assets/message.ttf); 
 }
 
 h1 {
@@ -13,12 +13,12 @@ h1 {
 }
 
 body {
-
-    /* font-family: Arial, sans-serif; */
-    background-image: url(assets/background.png);
-    background-size: cover;
-    font-family: number;
-    text-align: center;
+    background-image: url(assets/bg.png);
+    background-size:88%;
+    background-position: 20%;
+    height:80%;
+    font-family: message;
+    text-align: end;
     margin: 50px;
     color: hsl(196, 80%, 80%);
     color: hsl(240, 32%, 64%);
@@ -26,13 +26,17 @@ body {
   }
 
   .form-control {
-    font-size:18px;
+    font-size:28px;
+    font-family: message;
     font-weight: 2px;
     text-align: left;
     margin: 0.5%;
+    background-color: hsl(240, 41%, 95%);
+    box-shadow: 10px 10px;
   }
 
   input[type=text]{
+    font-family: message;
     width: 15%;
     padding: 10px 10px;
     margin: 8px 0;
@@ -41,3 +45,22 @@ body {
     box-shadow: 10px 10px;
   }
 
+  #submit-button{
+    font-size:18px;
+    background-color: hsl(240, 41%, 95%);
+    box-shadow: 1px 1px hsl(240, 32%, 64%);
+    color: grey;
+    font-family: message;
+    font-weight: 2px;
+    margin: 0.5%;
+    padding:0.5%;
+  }
+
+  #compatibility-message{
+    font-size:28px;
+    color: hsl(240, 32%, 64%);
+    font-family: message;
+    font-weight: 2px;
+    margin: 0.5%;
+    padding:0.5%;
+  }
